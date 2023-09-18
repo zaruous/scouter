@@ -16,6 +16,12 @@
  - Web API는 Servlet을 통해 서비스 되면 HTTP 프로토콜이나 JSON 파싱 등 부가적인 작업이 필요하기 때문에 기본 수집서버에 비해 자원 사용량이 높다.
    따라서 모니터링하는 시스템의 규모가 크다면 API 서버를 분리하여 실행할 필요가 있다.
  - standAlone webapp 실행 (Scouter Full 패키지에 포함되어 있음)
+ - rem .sh나 .bat 파일에 명령어 옵션을 추가해줘야 swaager가 동작한다. -DisUseSwagger=true
+   ```batch
+    rem JDK_JAVA_OPTIONS="--add-modules java.xml.bind"
+    java -cp scouter.webapp.jar;lib/* -DisUseSwagger=true scouterx.webapp.main.WebAppMain
+
+   ```
    ```bash
    cd scouter.webapp
    ./startup.sh
